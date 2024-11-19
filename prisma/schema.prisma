@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model member {
+  id             String @id
+  name           String
+  memberFunction String @default("")
+}
+
+model car {
+  id    String @id
+  plate String
+}
