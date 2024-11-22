@@ -28,6 +28,9 @@ let AppController = class AppController {
     async createMember(memberDto) {
         return this.membersRepository.createMember(memberDto);
     }
+    async getMembers() {
+        return this.membersRepository.getMembers();
+    }
 };
 exports.AppController = AppController;
 __decorate([
@@ -43,6 +46,12 @@ __decorate([
     __metadata("design:paramtypes", [member_dto_1.MemberDto]),
     __metadata("design:returntype", Promise)
 ], AppController.prototype, "createMember", null);
+__decorate([
+    (0, common_1.Get)('/allMembers'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "getMembers", null);
 exports.AppController = AppController = __decorate([
     (0, common_1.Controller)(),
     __metadata("design:paramtypes", [app_service_1.AppService,

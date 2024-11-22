@@ -19,4 +19,9 @@ export class AppController {
   async createMember(@Body() memberDto: MemberDto) {
     return this.membersRepository.createMember(memberDto);
   }
+
+  @Get('/allMembers')
+  async getMembers() {
+    return this.membersRepository.getMembers();
+  }
 }

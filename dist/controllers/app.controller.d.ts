@@ -12,5 +12,12 @@ export declare class AppController {
         name: string;
         memberFunction: string;
         id: string;
+        createdAt: Date;
     }>;
+    getMembers(): Promise<{
+        name: string;
+        memberFunction: string;
+        id: string;
+        createdAt: Date;
+    }[]>;
 }
