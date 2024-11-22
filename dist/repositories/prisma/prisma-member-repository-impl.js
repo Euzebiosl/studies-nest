@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PrismaMemberRepositoryImpl = void 0;
 const prisma_service_1 = require("../../database/prisma-service");
-const crypto_1 = require("crypto");
 const common_1 = require("@nestjs/common");
 let PrismaMemberRepositoryImpl = class PrismaMemberRepositoryImpl {
     constructor(prisma) {
@@ -20,7 +19,6 @@ let PrismaMemberRepositoryImpl = class PrismaMemberRepositoryImpl {
     createMember(newMember) {
         return this.prisma.member.create({
             data: {
-                id: (0, crypto_1.randomUUID)(),
                 name: newMember.name,
                 memberFunction: newMember.memberFunction,
             },

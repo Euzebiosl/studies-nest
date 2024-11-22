@@ -8,12 +8,21 @@ datasource db {
 }
 
 model member {
-  id             String @id
+  id             String   @id @default(uuid()) @db.Uuid
   name           String
-  memberFunction String @default("")
+  memberFunction String   @default("")
+  createdAt      DateTime @default(now())
 }
 
 model car {
-  id    String @id
-  plate String
+  id        String   @id @default(uuid()) @db.Uuid
+  plate     String
+  createdAt DateTime @default(now())
+}
+
+model driver {
+  id        String   @id @default(uuid()) @db.Uuid
+  name      String
+  plate     String
+  createdAt DateTime @default(now())
 }
